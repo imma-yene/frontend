@@ -1,0 +1,61 @@
+.navb{
+
+background-color: #030116;
+opacity: 0.8;
+}
+.heade .scrolldown link  {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -29px;
+    color: #fff;
+    display: block;
+    height: 42px;
+    width: 42px;
+    font-size: 42px;
+    line-height: 42px;
+    color: #fff;
+    border-radius: 100%;
+ 
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+ }
+.heade a{
+  text-decoration: none;
+  color: #fff;
+
+
+}
+
+.main{
+    margin-top:60px;
+    
+}
+.card{
+    background-color:rgb(243, 236, 236);
+    opacity:0.2;
+    color:rgb(4, 0, 255);
+    width:270px;
+    height: 270px;
+
+    
+}
+.me-auto {
+ margin-left: 200px;
+
+}
+.me-auto link{
+    padding-left: 100px;
+}
+
+
+@keyframes card {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -1,0 +1,35 @@
+.table1{
+    margin-top: 50px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 75%;
+    margin-left: 60px;
+}
+.foot{
+    background-color: black;
+    color: white;
+}
+.head{
+    background-color: black;
+}
+
+.btn{
+    color:white;
+}
+
+.Register{
+ width: 400px;
+ height: 500px;
+ background-color: #f4f6fc;
+margin-top: 100px;
+margin-left: 400px;
+
+
+}
+.reg{
+    margin: 30px;
+}
+.mb-3{
+    margin: 0px;
+    border: rounded-circle;
+}
