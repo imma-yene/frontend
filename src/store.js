@@ -1,11 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { getUsesReducer, userReducer } from './reducer/userReducer';
+import { getUsesReducer, userdeleteReducer, userReducer } from './reducer/userReducer';
 
 const reducer=combineReducers({
     user:userReducer,
-   users:getUsesReducer
+   users:getUsesReducer,
+ deleteuser:userdeleteReducer
 
 })
 

@@ -3,13 +3,14 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAll } from "../Action/userAction";
-function Login() {
+import { v4 as uuidv4 } from 'uuid';
+function View() {
     
 const {users,success,error}=useSelector(state=>state.users);
 const dispatch=useDispatch();
 
 
-console.log(users)
+console.log(typeof(users))
 useEffect(()=>{
     dispatch(getAll())
 },[dispatch])
@@ -17,39 +18,44 @@ useEffect(()=>{
 
     return(  
     
-       <table >
+       <table className="table table-dark">
         <thead>
             <tr>
                 <th>
                    id
                 </th>
                 <th>
-               fname
+               Firstname
+
                 </th>
                 <th>
                    Lastname
                 </th>
                 <th>
-                 uname
+                 Username
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th>
-                  
-                  
-                </th>
-                <th>
+    {users&&Array.from(users).map((user)=>{
 
-                </th>
-                <th>
-
-                </th>
-                <th>
-
-                </th>
-            </tr>
+return<tr key={uuidv4()}>
+<td >
+    {user._id}
+</td>
+<td >
+{user.firstname}
+</td>
+<td >
+{user.lastname}
+</td>
+<td >
+{user.username}
+</td>
+</tr>
+    })
+    }
+            
         </tbody>
        </table>
     
@@ -57,4 +63,4 @@ useEffect(()=>{
     )
 }
 
-export default Login;
+export default View;

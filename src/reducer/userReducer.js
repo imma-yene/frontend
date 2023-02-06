@@ -1,4 +1,4 @@
-const { ADD_USER_REQUEST, ADD_USER_SUCCESS, ADD_USER_FAIL, GET_ALL_USER_REQUEST, GET_ALL_USER_SUCCESS, GET_ALL_USER_FAIL } = require("../constants/userConstants");
+const {DELETE_USER_REQUEST,DELETE_USER_SUCCESS,DELETE_USER_FAIL, ADD_USER_REQUEST, ADD_USER_SUCCESS, ADD_USER_FAIL, GET_ALL_USER_REQUEST, GET_ALL_USER_SUCCESS, GET_ALL_USER_FAIL } = require("../constants/userConstants");
 
 export const userReducer=(state={user:{}},{type,payload})=>{
 
@@ -53,4 +53,28 @@ case GET_ALL_USER_REQUEST:
 
 
 
+}
+export const userdeleteReducer=(state={userdelete:{}},{type,payload})=>{
+
+    switch(type){
+case DELETE_USER_REQUEST:
+return{
+    payload:null,
+    loading:true,
+}
+case DELETE_USER_SUCCESS:
+    return{
+   success:payload.success,
+ 
+    }
+case DELETE_USER_FAIL:
+    return{
+        error:payload,
+       
+    }
+default:
+    return{
+    ...state
+}
+}
 }

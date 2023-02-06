@@ -1,6 +1,6 @@
 import axios from "axios"
 
-import { ADD_USER_FAIL, ADD_USER_REQUEST, ADD_USER_SUCCESS, GET_ALL_USER_FAIL, GET_ALL_USER_REQUEST, GET_ALL_USER_SUCCESS } from "../constants/userConstants"
+import {DELETE_USER_FAIL,DELETE_USER_SUCCESS,DELETE_USER_REQUEST, ADD_USER_FAIL, ADD_USER_REQUEST, ADD_USER_SUCCESS, GET_ALL_USER_FAIL, GET_ALL_USER_REQUEST, GET_ALL_USER_SUCCESS } from "../constants/userConstants"
 
  
 
@@ -19,7 +19,7 @@ const config= {
     ,
     config
     )
-     
+     console.log(userdata)
     dispatch({type:ADD_USER_SUCCESS,
     payload:data
 })
@@ -48,4 +48,25 @@ dispatch({type:GET_ALL_USER_SUCCESS,
     dispatch({type:GET_ALL_USER_FAIL})
 
 }
+}
+export const deleteone=(id)=>async(dispatch)=>{
+  
+  try{
+  
+    dispatch({type:DELETE_USER_REQUEST})
+ console.log("before requist");
+await axios.delete(`/deleteone/${id.id}`,
+    
+   
+)
+    console.log("after requist");
+    dispatch({type:DELETE_USER_SUCCESS,
+      payload:null,
+      
+})
+
+  }
+  catch(err){
+    dispatch({type:DELETE_USER_FAIL})
+  }
 }
